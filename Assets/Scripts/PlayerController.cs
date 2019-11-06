@@ -1,13 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
+
 
 public class PlayerController : MonoBehaviour
 {
 
     public Rigidbody myRigiBody;
     public float speed;
-
+    public Text scoreText;
 
     int score;
    // private Vector3 ipo;
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         myRigiBody.AddForce(movement * speed);
     }
 
-    //comparamos mediante el uso de tags para identificar el objeto que recogemos
+    //comparamos mediante el uso de tags para identificar el objeto que recogemos, al objeto (tigger lo desactivamos y sumamos su valor)
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("pt"))
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
 
             score += other.gameObject.GetComponent<Pickup>().points;
-            Debug.Log("puntuacion: " + score);
+            scoreText.text = "Score: " + score;
         }
     }
 }
