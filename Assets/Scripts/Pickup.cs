@@ -10,5 +10,6 @@ public class Pickup : MonoBehaviour
     {
         Vector3 rotation = new Vector3(15, 30, 45) * Time.deltaTime;
         transform.Rotate(rotation);
+        
     }
 }

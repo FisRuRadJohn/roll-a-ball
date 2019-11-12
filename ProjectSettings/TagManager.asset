@@ -7,6 +7,8 @@ TagManager:
   - plane
   - pt
   - player
+  - wt
+  - tp1
   layers:
   - Default
   - TransparentFX

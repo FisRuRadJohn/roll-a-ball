@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraMove : MonoBehaviour
 {
     public GameObject target;
+   
 
     Vector3 offset;
 
@@ -13,8 +14,11 @@ public class CameraMove : MonoBehaviour
         offset = transform.position - target.transform.position;
     }
 
-    void Update()
+    void LateUpdate()
     {
+       
         transform.position = target.transform.position + offset;
+        transform.LookAt (target.transform.position);
+        
     }
 }

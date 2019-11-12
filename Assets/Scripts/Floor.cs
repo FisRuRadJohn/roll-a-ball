@@ -5,7 +5,7 @@ using UnityEngine;
 public class Floor : MonoBehaviour
 {
 
-    public GameObject spawn;
+    public GameObject cave1;
    // int tries = 3;
 
     // Start is called before the first frame update
@@ -24,7 +24,7 @@ public class Floor : MonoBehaviour
     {
         if (other.gameObject.CompareTag("player"))
         {
-            other.gameObject.transform.position = spawn.transform.position;
+            other.gameObject.transform.position = cave1.transform.position;
             
         }
             

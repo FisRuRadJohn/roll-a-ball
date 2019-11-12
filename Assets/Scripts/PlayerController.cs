@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 
     public Rigidbody myRigiBody;
     public float speed;
+    public float maxspeed;
     public Text scoreText;
 
     int score;
@@ -31,6 +32,13 @@ public class PlayerController : MonoBehaviour
 
         Vector3 movement = new Vector3(movementHorizontal, 0f, movementVertical);
         myRigiBody.AddForce(movement * speed);
+
+        if (myRigiBody.velocity.magnitude > maxspeed)
+
+        {
+            myRigiBody.velocity = myRigiBody.velocity.normalized * maxspeed;
+        }
+       
     }
 
     //comparamos mediante el uso de tags para identificar el objeto que recogemos, al objeto (tigger lo desactivamos y sumamos su valor)
