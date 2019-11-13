@@ -9,9 +9,10 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float maxspeed;
     public Text scoreText;
+    
 
     int score;
-   // private Vector3 ipo;
+    // private Vector3 ipo;
 
     // Start is called before the first frame update
     void Start()
@@ -22,14 +23,15 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {  
+    {
+
     }
 
     private void FixedUpdate()
     {
+
         float movementHorizontal = Input.GetAxis("Horizontal");
         float movementVertical = Input.GetAxis("Vertical");
-
         Vector3 movement = new Vector3(movementHorizontal, 0f, movementVertical);
         myRigiBody.AddForce(movement * speed);
 
@@ -38,7 +40,7 @@ public class PlayerController : MonoBehaviour
         {
             myRigiBody.velocity = myRigiBody.velocity.normalized * maxspeed;
         }
-       
+
     }
 
     //comparamos mediante el uso de tags para identificar el objeto que recogemos, al objeto (tigger lo desactivamos y sumamos su valor)
@@ -51,5 +53,9 @@ public class PlayerController : MonoBehaviour
             score += other.gameObject.GetComponent<Pickup>().points;
             scoreText.text = "Score: " + score;
         }
+      
     }
+
+
+
 }

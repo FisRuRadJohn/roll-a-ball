@@ -9,6 +9,7 @@ TagManager:
   - player
   - wt
   - tp1
+  - cartel
   layers:
   - Default
   - TransparentFX
